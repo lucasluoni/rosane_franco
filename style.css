@@ -1,0 +1,58 @@
+#obras_home .card-group .card {
+	display: inline-block;
+}
+
+.card-columns {
+	@include media-breakpoint-only(lg) {
+		column-count: 4;
+	}
+	@include media-breakpoint-only(xl) {
+		column-count: 5;
+	}
+}
+
+/* OBRAS - Image Hover Overlay */
+
+#obras .card {
+	/*position: relative;*/
+	/*width: 50%;*/
+}
+
+#obras .card-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.card-img-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	/*background-color: #008CBA;*/
+	background: -moz-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+	background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
+}
+
+#obras .card:hover .card-img-overlay {
+	opacity: 1;
+}
+
+.card-text {
+	color: white;
+	font-size: 20px;
+	/*position: absolute;
+	top: 50%;
+	left: 50%;*/
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
