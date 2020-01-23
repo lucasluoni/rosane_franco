@@ -11,6 +11,13 @@
 	}
 }
 
+/* Carousel */
+
+.carousel-caption {
+	bottom: unset;
+	top: 45%;
+}
+
 /* OBRAS - Image Hover Overlay */
 
 #obras .card {
@@ -45,7 +52,7 @@
 	opacity: 1;
 }
 
-.card-text {
+#obras .card-text {
 	color: white;
 	font-size: 20px;
 	/*position: absolute;

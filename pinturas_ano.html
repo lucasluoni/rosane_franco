@@ -23,13 +23,26 @@
 
  		<link rel="stylesheet" type="text/css" href="style.css">
 
+ 		<link rel="stylesheet" href="css/blueimp-gallery.min.css" />
+
 
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<!-- <?php wp_head(); ?> -->
-  </head>
+  	</head>
 
-  <body>
+	<body>
+
+	<!-- The Gallery as lightbox dialog, should be a document body child element -->
+	<div id="blueimp-gallery" class="blueimp-gallery">
+		<div class="slides"></div>
+		<h3 class="title"></h3>
+		<a class="prev">‹</a>
+		<a class="next">›</a>
+		<a class="close">×</a>
+		<a class="play-pause"></a>
+		<!-- <ol class="indicator"></ol> -->
+	</div>	
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,7 +94,7 @@
 			    <div class="carousel-item active">
 			    	<img class="d-block w-100" src="images/medio-slide.svg" alt="First slide">
 			    	<div class="carousel-caption d-none d-md-block">
-						<h1>Pinturas</h1>
+						<h1>Pinturas > 2019</h1>
 						<!-- <p>legenda do primeiro slide.</p> -->
 			  		</div>
 			  	</div>
@@ -116,7 +129,7 @@
 
 			</div>
 
-			<h1 class="d-block d-sm-block d-md-none d-lg-none d-xl-none text-center my-3">Pinturas</h1>
+			<h1 class="d-block d-sm-block d-md-none d-lg-none d-xl-none text-center my-3">Pinturas > 2019</h1>
 
 		</div>
 	</div>
@@ -127,61 +140,36 @@
 	<div class="container-fluid">
 		<div class="container">
 
-<!-- 			<div class="row">
-				<div class="col">
-
-					<section id="sobre_home" class="my-5 text-center">
-						<h5 class="text-uppercase">sobre mim</h5>
-						<h1 class="text-uppercase">rosane franco</h1>
-
-						<hr class="w-25">
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis erat leo, nec aliquam arcu tempus ut. Nulla nec lacus est. Vivamus posuere nunc ultricies tellus lacinia dignissim. Nullam et augue nec enim venenatis bibendum interdum quis purus. In hac habitasse platea dictumst. Phasellus bibendum lorem vitae gravida convallis. Aenean ullamcorper sem tellus, ut auctor turpis tempus sedid sodales.</p>
-
-						<button type="button" class="btn btn-primary">saiba mais</button>
-					</section>
-
-				</div>
-			</div> -->
-
 			<div class="row">
-				<div id="obras" class="col mx-auto">
+				<div id="pinturas_ano" class="col">
 
-					<div class="card-deck">
+					<div class="card-columns">
 
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
-							</div>
-						</div>
+						<div id="links">
 
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
-							</div>
-						</div>
+						  	<a class="card text-white" href="images/second-slide.svg" title="sem título">
+								<img class="card-img" src="images/card-img.svg" alt="sem titulo">
+								<div class="card-img-overlay">
+									<h5 class="card-title">2019</h5>
+									<a href="" class="card-text">ver pinturas</a>
+								</div>
+							</a>
 
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
-							</div>
-						</div>
+						</div><!-- links -->
 
-					</div>
+					</div><!-- card-columns -->	
 
 					<div id="loading" class="mx-auto" style="width:60px;display:block;"></div>
 				
-				<button type="button" class="btn btn-primary mx-auto my-3 d-block">load more</button>						
+					<button type="button" class="btn btn-primary mx-auto my-3 d-block">load more</button>						
 
-				</div>	
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="col">
 
+				</div>
 			</div>
 			
 		</div>
@@ -220,6 +208,22 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<script src="js/blueimp-gallery.min.js"></script>
+
+	<script>
+	document.getElementById('links').onclick = function(event) {
+	    event = event || window.event
+	    var target = event.target || event.srcElement,
+			link = target.src ? target.parentNode : target,
+			options = { index: link, event: event },
+			links = this.getElementsByTagName('a')
+	    blueimp.Gallery(links, options)
+	}
+	</script>	
+
+
 
   </body>
 
