@@ -1,3 +1,36 @@
+body, h1, h2, h3, h4, h5, h6, p, a {
+	color: #000 !important;
+	font-family: 'Raleway', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700 !important;
+}
+
+.navbar-brand img {
+	width: 160px;
+}
+
+footer#footer-pagina {
+	border-top: 3px solid #000;
+}
+
+.nav-item a.nav-link {
+	color: #000 !important;
+}
+
+.nav-item.active a.nav-link {
+	color: #FC9D2C !important;
+}
+
+footer #nav-social a.nav-link {
+	display: inline-table;
+}
+
+footer #nav-social a.nav-link:hover {
+	color: #FC9D2C !important;
+}
+
 #obras_home .card-group .card {
 	display: inline-block;
 }

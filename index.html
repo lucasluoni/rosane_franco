@@ -27,19 +27,26 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<!-- <?php wp_head(); ?> -->
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+
+		<!-- Ion Icons -->
+		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
   </head>
 
   <body>
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">rosane franco</a>
+		  <a class="navbar-brand" href="#"><img src="images/logo_header.png"></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav ml-auto text-capitalize">
+		    <ul class="navbar-nav ml-auto text-uppercase">
 				<li class="nav-item active">
 					<a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
 				</li>
@@ -122,7 +129,7 @@
 		<!-- </div> -->
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid pb-5">
 		<div class="container">
 
 			<div class="row">
@@ -147,7 +154,7 @@
 
 					<section id="obras_home" class="my-5">
 
-						<div class="card-columns">
+<!-- 						<div class="card-columns">
 						<div class="card bg-dark text-white d-inline-block">
 							<img class="card-img" src="images/card-img.svg" alt="Card image">
 							<div class="card-img-overlay">
@@ -155,11 +162,77 @@
 								<a href="" class="card-text">ver séries</a>
 							</div>
 						</div>
+						</div> -->
+
+						<div class="card-columns">
+						  <div class="card">
+						    <img class="card-img-top" src="..." alt="Card image cap">
+						    <div class="card-body">
+						      <h5 class="card-title">Card title that wraps to a new line</h5>
+						      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						    </div>
+						  </div>
+						  <div class="card p-3">
+						    <blockquote class="blockquote mb-0 card-body">
+						      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						      <footer class="blockquote-footer">
+						        <small class="text-muted">
+						          Someone famous in <cite title="Source Title">Source Title</cite>
+						        </small>
+						      </footer>
+						    </blockquote>
+						  </div>
+						  <div class="card">
+						    <img class="card-img-top" src="..." alt="Card image cap">
+						    <div class="card-body">
+						      <h5 class="card-title">Card title</h5>
+						      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+						      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						    </div>
+						  </div>
+						  <div class="card bg-primary text-white text-center p-3">
+						    <blockquote class="blockquote mb-0">
+						      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+						      <footer class="blockquote-footer">
+						        <small>
+						          Someone famous in <cite title="Source Title">Source Title</cite>
+						        </small>
+						      </footer>
+						    </blockquote>
+						  </div>
+						  <div class="card text-center">
+						    <div class="card-body">
+						      <h5 class="card-title">Card title</h5>
+						      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+						      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						    </div>
+						  </div>
+						  <div class="card">
+						    <img class="card-img" src="..." alt="Card image">
+						  </div>
+						  <div class="card p-3 text-right">
+						    <blockquote class="blockquote mb-0">
+						      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						      <footer class="blockquote-footer">
+						        <small class="text-muted">
+						          Someone famous in <cite title="Source Title">Source Title</cite>
+						        </small>
+						      </footer>
+						    </blockquote>
+						  </div>
+						  <div class="card">
+						    <div class="card-body">
+						      <h5 class="card-title">Card title</h5>
+						      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+						      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						    </div>
+						  </div>
 						</div>
-						<button type="button" class="btn btn-primary mx-auto d-flex">load more</button>
 
 					</section>							
 				
+					<button type="button" class="btn btn-primary mx-auto d-flex">ver mais</button>
+
 				</div>						
 			</div>
 			
@@ -167,17 +240,46 @@
 	</div>
 
 
-	<footer class="py-2 bg-light">
+	<footer id="footer-pagina" class="py-2 bg-white">
 		
 		<div class="container-fluid">
+			
 			<div class="row">
+				<div class="col">
+
+				    <ul class="nav ml-auto text-uppercase">
+						<li class="nav-item active">
+							<a class="nav-link pl-0" href="index.html">home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">obras</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="pinturas.html">pinturas</a>
+								<a class="dropdown-item" href="papeis.html">papéis</a>
+								<a class="dropdown-item" href="series.html">séries</a>
+							</div>
+						</li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="sobre.html">sobre</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="contato.html">contato</a>
+				      </li>
+				    </ul>		    
+
+				</div>
+			</div>
+
 					
+			<div class="row">
+
 					<div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-8">
 						<div class="justify-content-start py-2">Rosane Franco © 2020 - Todos os Direitos Reservados</div>
 					</div>
 
 					<div class="col-6 col-md-5 col-lg-6 col-xl-4 d-none d-sm-none d-md-block d-lg-block d-xl-inline-block">
-						<ul class="nav social justify-content-end">
+						
+						<!-- <ul class="nav social justify-content-end">
 							<li class="nav-item">
 								<a class="nav-link active" href="#">facebook</a>
 							</li>
@@ -187,7 +289,22 @@
 							<li class="nav-item">
 								<a class="nav-link" href="#">instagram</a>
 							</li>
-						</ul>
+						</ul> -->
+
+				        <ul id="nav-social" class="nav justify-content-end">
+				        	<li class="nav-item">
+					            <a href="https://twitter.com/jana_matida" target="_blank" class="nav-link">
+									<ion-icon name="logo-twitter" class="adobe"></ion-icon>
+					            </a>
+					            <a href="https://www.facebook.com/jana.matida" target="_blank" class="nav-link">
+									<ion-icon name="logo-facebook" class="adobe"></ion-icon>
+					            </a>
+					            <a href="https://www.instagram.com/jana_matida/" target="_blank" class="nav-link">
+									<ion-icon name="logo-instagram" class="adobe"></ion-icon>
+				            	</a>
+				          </li>
+				        </ul>
+
 					</div>
 			</div>
 		</div>
