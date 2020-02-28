@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br" class="no-js">
 	<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 	<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -10,8 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title> -->
 		<meta http-equiv="content-language" content="pt-br" />
-		<meta name="copyright" content="Copyright (c)2019 - Janaina Matida. Todos os direitos reservados." />
-		<meta name="author" content="Janaina Matida">
+		<meta name="copyright" content="Copyright (c)2020 - Rosane Franco. Todos os direitos reservados." />
+		<meta name="author" content="Rosane Franco">
 		<!-- If this is a single post view, show the post title; if this is a multi-post view, show the blog name and description -->
 <!-- 		<meta name="description" content="<?php if ( is_single() ) {
 		        single_post_title('', true); 
@@ -27,26 +27,33 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<!-- <?php wp_head(); ?> -->
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+
+		<!-- Ion Icons -->
+		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
   </head>
 
   <body>
 	
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="#">rosane franco</a>
+		  <a class="navbar-brand" href="#"><img src="images/logo_header.png"></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav ml-auto text-capitalize">
-				<li class="nav-item active">
-					<a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
+		    <ul class="navbar-nav ml-auto text-uppercase">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">home</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">obras</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="pinturas.html">pinturas</a>
+						<a class="dropdown-item active" href="pinturas.html">pinturas</a>
 						<a class="dropdown-item" href="papeis.html">papéis</a>
 						<a class="dropdown-item" href="series.html">séries</a>
 					</div>
@@ -69,7 +76,7 @@
 				<div class="col px-0">
 
 
-			<div id="carouselExampleIndicators" class="carousel slide d-none d-sm-block d-md-block d-lg-block d-xl-block mb-5" data-ride="carousel">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<!-- <ol class="carousel-indicators">
 					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -79,9 +86,9 @@
 				<div class="carousel-inner">
 			    
 			    <div class="carousel-item active">
-			    	<img class="d-block w-100" src="images/medio-slide.svg" alt="First slide">
+			    	<img class="d-block w-100" src="images/first-slide.svg" alt="First slide">
 			    	<div class="carousel-caption d-none d-md-block">
-						<h1>Pinturas</h1>
+						<h1 class="display-3">Pinturas</h1>
 						<!-- <p>legenda do primeiro slide.</p> -->
 			  		</div>
 			  	</div>
@@ -100,8 +107,8 @@
 						<h5>Título do terceiro slide</h5>
 						<p>legenda do terceiro slide.</p>
 			  		</div>
-			    </div> -->
-
+			    </div>
+ -->
 			  </div>
 
 			 <!--  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -116,21 +123,19 @@
 
 			</div>
 
-			<h1 class="d-block d-sm-block d-md-none d-lg-none d-xl-none text-center my-3">Pinturas</h1>
-
 		</div>
 	</div>
 
 		<!-- </div> -->
 	</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid pb-5">
 		<div class="container">
 
-<!-- 			<div class="row">
+			<!-- <div class="row">
 				<div class="col">
 
-					<section id="sobre_home" class="my-5 text-center">
+					<section id="sobre_home" class="mt-5 text-center">
 						<h5 class="text-uppercase">sobre mim</h5>
 						<h1 class="text-uppercase">rosane franco</h1>
 
@@ -144,61 +149,123 @@
 				</div>
 			</div> -->
 
-			<div class="row">
-				<div id="obras" class="col mx-auto">
+			<div id="obras_home" class="row mt-5 mb-0">
+				<div class="col">
 
-					<div class="card-deck">
-
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
+						<div class="card-deck">
+						  
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2019</h3>
+									<a href="#">ver pinturas</a>
+								</div>
 							</div>
-						</div>
-
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2018</h3>
+									<a href="#">ver pinturas</a>
+								</div>
 							</div>
-						</div>
-
-						<div class="card bg-dark text-white">
-							<img class="card-img" src="images/card-img.svg" alt="Card image">
-							<div class="card-img-overlay">
-								<h5 class="card-title">2019</h5>
-								<a href="" class="card-text">ver pinturas</a>
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2017</h3>
+									<a href="#">ver pinturas</a>
+								</div>
 							</div>
-						</div>
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2016</h3>
+									<a href="#">ver pinturas</a>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2015</h3>
+									<a href="#">ver pinturas</a>
+								</div>
+							</div>
+							<div class="card">
+								<img class="card-img-top" src="images/thumbs/rf-02.jpg" alt="Card image cap">
+								<div class="overlay text-white px-4">
+									<h3 class="text-uppercase">2014</h3>
+									<a href="#">ver pinturas</a>
+								</div>
+							</div>
 
-					</div>
-
-					<div id="loading" class="mx-auto" style="width:60px;display:block;"></div>
+					  	</div>							
 				
-				<button type="button" class="btn btn-primary mx-auto my-3 d-block">load more</button>						
 
-				</div>	
-
-
+				</div>						
 			</div>
-			
+
+			<!-- <button type="button" class="btn btn-primary mx-auto d-flex">ver mais</button> -->
+
 		</div>
 	</div>
 
 
-	<footer class="py-2 bg-light">
+	<footer id="footer-pagina" class="py-2 bg-white">
 		
 		<div class="container-fluid">
+			
 			<div class="row">
-					
-					<div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-8">
-						<div class="justify-content-start py-2">Rosane Franco © 2020 - Todos os Direitos Reservados</div>
-					</div>
 
-					<div class="col-6 col-md-5 col-lg-6 col-xl-4 d-none d-sm-none d-md-block d-lg-block d-xl-inline-block">
-						<ul class="nav social justify-content-end">
+				<div class="col">
+				
+				<!-- <div class="col-12 col-md-9 col-lg-10 col-xl-8"> -->
+
+				<div class="pos-f-t">
+
+
+				  <div class="collapse" id="navbarToggleExternalContent">
+
+				    <ul class="nav ml-auto text-uppercase flex-column">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">obras</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="pinturas.html">pinturas</a>
+								<a class="dropdown-item" href="papeis.html">papéis</a>
+								<a class="dropdown-item" href="series.html">séries</a>
+							</div>
+						</li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="sobre.html">sobre</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="contato.html">contato</a>
+				      </li>
+				    </ul>		    
+
+				      <!-- <h4 class="text-white">Collapsed content</h4>
+				      <span class="text-muted">Toggleable via the navbar brand.</span> -->
+
+				  </div><!-- .collapse -->
+
+				  <nav class="navbar navbar-light bg-white">
+				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				
+
+
+
+				<!-- </div> -->
+<!-- 			</div>
+
+					
+			<div class="row"> -->
+
+					<!-- <div class="col-12 col-md-3 col-lg-2 col-xl-4 d-block d-sm-block d-md-block d-lg-block d-xl-inline-block"> -->
+						
+						<!-- <ul class="nav social justify-content-end">
 							<li class="nav-item">
 								<a class="nav-link active" href="#">facebook</a>
 							</li>
@@ -208,10 +275,37 @@
 							<li class="nav-item">
 								<a class="nav-link" href="#">instagram</a>
 							</li>
-						</ul>
+						</ul> -->
+
+				        <ul id="nav-social" class="nav justify-content-end">
+				        	<li class="nav-item">
+					            <a href="https://twitter.com/" target="_blank" class="nav-link px-2">
+									<ion-icon name="logo-twitter" class="adobe"></ion-icon>
+					            </a>
+					            <a href="https://www.facebook.com/" target="_blank" class="nav-link px-2">
+									<ion-icon name="logo-facebook" class="adobe"></ion-icon>
+					            </a>
+					            <a href="https://www.instagram.com/" target="_blank" class="nav-link px-2">
+									<ion-icon name="logo-instagram" class="adobe"></ion-icon>
+				            	</a>
+				          </li>
+				        </ul>
+
+					<!-- </div> -->
+
+
+				  </nav><!-- navbar -->
+				</div><!-- .pos-f-t -->
+
+					<div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xl-8">
+						<div class="justify-content-start py-2">Rosane Franco © 2020. <br /> Todos os Direitos Reservados.</div>
 					</div>
+
+
 			</div>
 		</div>
+
+	</div>
 		
 	</footer>
 
