@@ -50,7 +50,7 @@ footer #nav-social a.nav-link:hover {
 	color: #FC9D2C !important;
 }
 
-#obras_home .card-group .card {
+#obras_column .card-group .card {
 	display: inline-block;
 }
 
@@ -120,12 +120,12 @@ footer #nav-social a.nav-link:hover {
 /* card-columns */
 
 
-#obras_home .card {
+#obras_column .card {
 	position: relative;
 	display: inline-flex;
 }
 
-#obras_home .card .overlay {
+#obras_column .card .overlay {
 	position: absolute;
 	opacity: 0.7;
     background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
@@ -141,14 +141,14 @@ footer #nav-social a.nav-link:hover {
 	font-size: 22px;
 }
 
-#obras_home .card .overlay a {
+#obras_column .card .overlay a {
 	color: #fff;
 	top: auto !important;
     bottom: 25px;
     position: absolute;
 }
 
-#obras_home .card .overlay a:hover {
+#obras_column .card .overlay a:hover {
 	cursor: pointer;
 	text-decoration: unset;
 }
@@ -169,3 +169,23 @@ footer #nav-social a.nav-link:hover {
     background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
 }*/
+
+#contato input, #contato textarea {
+	background-color: #fff;
+	border: 3px solid #000;
+	/*color: #000;*/
+	border-radius: 0;
+	/*text-transform: uppercase;*/
+	font-size: 15px;
+}
+
+
+.navbar-light .navbar-toggler {
+    color: #000 !important;
+    border-radius: 0 !important;
+    border: 2px solid #000 !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
