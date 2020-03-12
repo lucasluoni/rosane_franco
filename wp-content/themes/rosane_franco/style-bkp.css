@@ -1,0 +1,422 @@
+/*
+Text Domain: rosane_franco
+Theme Name: Rosane Franco
+Theme URI: http://www.lucasluoni.com
+Description: Tema customizado para website da Rosane Franco.
+Author: Lucas Luoni
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/****************************************************************************
+* Geral */
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+	font-family: 'Raleway', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700 !important;
+}
+
+.navbar-brand img {
+	width: 160px;
+}
+
+.btn.btn-primary {
+	background-color: #fff;
+	border: 3px solid #000;
+	color: #000;
+	border-radius: 0;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+hr {
+	border-top: 3px solid #000 !important;
+}
+
+.btn.btn-primary:hover {
+	background-color: #FC9D2C;
+	border: 3px solid #FC9D2C;
+	color: #fff;
+	cursor: pointer;
+}
+
+footer#footer-pagina {
+	border-top: 3px solid #000;
+}
+
+.nav-item a.nav-link {
+	color: #000 !important;
+}
+
+.nav-item.active a.nav-link {
+	color: #FC9D2C !important;
+}
+
+footer #nav-social a.nav-link {
+	display: inline-table;
+}
+
+footer #nav-social a.nav-link:hover {
+	color: #FC9D2C !important;
+}
+
+#obras_column .card-group .card {
+	display: inline-block;
+}
+
+.card-columns {
+	@include media-breakpoint-only(lg) {
+		column-count: 4;
+	}
+	@include media-breakpoint-only(xl) {
+		column-count: 5;
+	}
+}
+
+/* Carousel */
+
+.carousel-caption {
+	bottom: unset;
+	top: 45%;
+}
+
+/* OBRAS - Image Hover Overlay */
+
+/*#obras .card {
+}
+
+#obras_home .card-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.card-img-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background: -moz-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+	background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
+}
+
+#obras_home .card:hover .card-img-overlay {
+	opacity: 1;
+}
+
+#obras_home .card-text {
+	color: white;
+	font-size: 20px;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}*/
+
+#obras_home .card {
+	position: relative;
+	display: inline-flex;
+}
+
+#obras_home .card .overlay {
+	position: absolute;
+	opacity: 0.7;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	/*background: red;*/
+	width: 100%;
+	height: 100%;
+}
+
+.overlay h3 {
+	position: absolute;
+    top: 35px;
+	bottom: auto !important;
+	font-size: 22px;
+}
+
+#obras_home .card .overlay a {
+	color: #fff;
+	top: auto !important;
+    bottom: 25px;
+    position: absolute;
+}
+
+#obras_home .card .overlay a:hover {
+	cursor: pointer;
+	text-decoration: unset;
+}
+
+
+/*.card:hover .overlay:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s 0.2s;
+    transition: opacity 0.5s 0.2s;
+    background: -moz-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
+}*/
+
+/* card-columns */
+
+
+#obras_column .card {
+	position: relative;
+	display: inline-flex;
+}
+
+#obras_column .card .overlay {
+	position: absolute;
+	opacity: 0.7;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	/*background: red;*/
+	width: 100%;
+	height: 100%;
+}
+
+.overlay h3 {
+	position: absolute;
+    top: 35px;
+	bottom: auto !important;
+	font-size: 22px;
+}
+
+#obras_column .card .overlay a {
+	color: #fff;
+	top: auto !important;
+    bottom: 25px;
+    position: absolute;
+}
+
+#obras_column .card .overlay a:hover {
+	cursor: pointer;
+	text-decoration: unset;
+}
+
+
+/*.card:hover .overlay:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s 0.2s;
+    transition: opacity 0.5s 0.2s;
+    background: -moz-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
+}*/
+
+/* card-deck */
+
+
+#obras_deck .card {
+	position: relative;
+	display: inline-flex;
+}
+
+#obras_deck .card .overlay {
+	position: absolute;
+/*	opacity: 0.7;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	background: red;
+	width: 100%;
+	height: 100%;
+*/}
+
+/*.overlay h3 {
+	position: absolute;
+    top: 35px;
+	bottom: auto !important;
+	font-size: 22px;
+}
+*/
+#obras_deck .card .overlay a {
+	color: #fff;
+	top: auto !important;
+    bottom: 25px;
+    position: absolute;
+}
+
+#obras_deck .card .overlay a:hover {
+	cursor: pointer;
+	text-decoration: unset;
+}
+
+
+/*.card:hover .overlay:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s 0.2s;
+    transition: opacity 0.5s 0.2s;
+    background: -moz-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    background: linear-gradient(to right, rgba(255,43,88,0.8) 0%,rgba(255,216,0,0.8) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff2b58', endColorstr='#ccffd800',GradientType=1 ) !important;
+}*/
+
+#contato input, #contato textarea {
+	background-color: #fff;
+	border: 3px solid #000;
+	/*color: #000;*/
+	border-radius: 0;
+	/*text-transform: uppercase;*/
+	font-size: 15px;
+}
+
+
+.navbar-light .navbar-toggler {
+    color: #000 !important;
+    border-radius: 0 !important;
+    border: 2px solid #000 !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.timeline hr {
+	margin-inline-start: 0;
+	width: 12%!important;
+}
+
+
+
+/* content hover overlay */
+
+/*.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}*/
+
+.content .content-overlay {
+	/*background: rgba(0,0,0,0.7);*/
+	position: absolute;
+	/*height: 99%;*/
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	/*  opacity: 0;*/
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+	opacity: 0;
+    background: -webkit-linear-gradient(left, rgba(255,43,88,0.8) 0%, rgba(255,216,0,0.8) 100%) !important;
+	background: red;
+	width: 100%;
+	height: 100%;
+
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  /*text-align: center;*/
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+/*-webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);*/  
+  transform: translate(-45%, -90%);
+/*-webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;*/
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 60%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details p{
+	/*top: 250%;*/
+	position: absolute;
+}
+
+.content-details h3{
+/*  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+*/
+/*	position: absolute;
+    top: 35px;
+	bottom: auto !important;
+	font-size: 22px;*/
+	font-size: 24px;
+}
+
+/*.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}*/
+
+/*.fadeIn-bottom{
+  top: 80%;
+}
+*/
+
+.fadeIn-top{
+	top: 20%;
+}
+
+
+.ionicons {
+	font-size: 24px;
+/*	transition: opacity 1s 0.12s, transform 0.5s 0.12s;
+	transform: translateY(0);
+	webkit-transition: opacity 1s 0.12s, transform 0.5s 0.12s;
+    transition: opacity 1s 0.12s, transform 0.5s 0.12s;
+    transition-property: opacity, transform;
+    transition-duration: 1s, 0.5s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0.12s, 0.12s;*/
+}
+
+.content.card .content-title h3 {
+}

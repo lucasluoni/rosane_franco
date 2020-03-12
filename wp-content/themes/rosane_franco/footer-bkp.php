@@ -165,31 +165,5 @@
     })
     </script>
 
-    <!--  Load More Eventos na Home (loop-front-page.php) ////////////////////////////////////////////////////// -->   
-    <script type="text/javascript">
-    var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-    var page = 2;
-    jQuery(function($) {
-      $('body').on('click', '.load-more-home', function() {
-      // alert("Hello! I am an alert box!!");
-      $('#loading').stop().hide().fadeIn('fast');
-      //$('.loadmore').hide().fadeOut('fast');
-      $('#loading').html('<img src="<?php echo get_template_directory_uri(); ?>/images/loading.gif" />');
-        var data = {
-          'action': 'load_posts_home_by_ajax',
-          'page': page,
-          'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
-        };
-
-        $.post(ajaxurl, data, function(response) {
-        $('#loading').hide().fadeOut('fast');
-        //$('.loadmore').stop().hide().fadeIn('fast');    
-          $('.card-columns').append(response);
-          page++;
-        });
-      });
-    });
-    </script>
-
   </body>
 </html>
