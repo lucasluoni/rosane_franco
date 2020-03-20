@@ -5,7 +5,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 $formcontent="De: $name \nE-mail: $email \n\nMensagem: $message";
 $recipient = 'Bcc: <'. get_option('admin_email') . '>'. "\r\n";
-$subject = "Contato do site Mar Adentro";
+$subject = "Contato do site da Rosane Franco";
 $mailheader = "From: $email \r\n";
 if (mail($recipient, $subject, $formcontent, $mailheader)) {
 	?>

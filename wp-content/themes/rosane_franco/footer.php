@@ -165,8 +165,9 @@
     })
     </script>
 
-    <!--  Load More Eventos na Home (loop-front-page.php) ////////////////////////////////////////////////////// -->   
     <script type="text/javascript">
+
+    //  Load More Eventos na Home (loop-front-page.php) ////////////////////////////////////////////////////// 
     var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
     var page = 2;
     jQuery(function($) {
@@ -189,7 +190,43 @@
         });
       });
     });
+
+    // Load More Eventos na tela das Obras (ano/tipo-de-obra) (loop-archive.php) ////////////////////////////////////////////////////   
+    var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+    var page = 2;
+    jQuery(function($) {
+      $('body').on('click', '.load-more-obras', function() {
+      // alert("Hello! I am an alert box!!");
+      $('#loading').stop().hide().fadeIn('fast');
+      //$('.loadmore').hide().fadeOut('fast');
+      $('#loading').html('<img src="<?php echo get_template_directory_uri(); ?>/images/loading.gif" />');
+        var data = {
+          'action': 'load_obras_by_ajax',
+          'page': page,
+          'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
+        };
+
+        $.post(ajaxurl, data, function(response) {
+        $('#loading').hide().fadeOut('fast');
+        //$('.loadmore').stop().hide().fadeIn('fast');    
+          $('.card-columns').append(response);
+          page++;
+        });
+      });
+    });
+
     </script>
+
+    <script>
+      $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+    </script>
+
+    <script>// <![CDATA[
+      function goBack() { window.history.back() }
+    // ]]></script>
 
   </body>
 </html>

@@ -15,31 +15,15 @@
 			
 						<div class="carousel-inner">
 					    
-					    <div class="carousel-item active">
-					    	<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/first-slide.svg'); ?> alt="First slide">
-					    	<div class="carousel-caption d-none d-md-block">
-								<h5>Título do primeiro slide</h5>
-								<p>legenda do primeiro slide.</p>
-					  		</div>
-					  	</div>
+							<div class="carousel-item active">
+							<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/first-slide.svg'); ?> alt="First slide">
+								<div class="carousel-caption d-none d-md-block">
+									<h1>Portfolio de Rosane Franco</h1>
+									<h5>Saiba mais</h5>
+								</div>
+							</div>
 
-<!-- 					    <div class="carousel-item">
-					    	 <img class="d-block w-100" src="images/second-slide.svg" alt="Second slide">
-					    	<div class="carousel-caption d-none d-md-block">
-								<h5>Título do segundo slide</h5>
-								<p>legenda do segundo slide.</p>
-					  		</div>
-					    </div>
-
-					    <div class="carousel-item">
-						    <img class="d-block w-100" src="images/third-slide.svg" alt="Third slide">
-					    	<div class="carousel-caption d-none d-md-block">
-								<h5>Título do terceiro slide</h5>
-								<p>legenda do terceiro slide.</p>
-					  		</div>
-					    </div>
- -->
-					  </div>
+						</div>
 
 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -127,7 +111,7 @@
 				<?php
 				// don't display the button if there are not enough posts
 				if (  $my_posts->max_num_pages > 1 )
-				  echo '<button type="button" class="btn btn-primary mx-auto d-flex load-more-home">+ novidades</button>'; // you can use <a> as well
+				  echo '<button type="button" class="btn btn-primary mx-auto my-5 d-flex load-more-home">ver mais</button>'; // you can use <a> as well
 				?>
 
 			</div><!-- obras_home -->

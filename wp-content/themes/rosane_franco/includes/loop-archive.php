@@ -11,7 +11,8 @@
 							<div class="carousel-item active">
 							<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/banner-home-rosane-franco-01.jpg'); ?> alt="First slide">
 								<div class="carousel-caption d-none d-md-block">
-									<h1><?php single_cat_title(''); ?></h1>
+									<h1><?php echo get_category_parents( $cat, false, ' &raquo; ' ); ?></h1>
+									<div class="has-overlay"></div>
 								</div>
 							</div>
 
@@ -27,21 +28,33 @@
 	<div class="container-fluid pb-5">
 		<div class="container">
 
-			<div id="obras_home" class="row mt-5 mb-0">
+			<button class="btn btn-primary ml-auto mt-5 d-flex" onclick="goBack()">voltar</button>
+
+			<div id="obras_home" class="row mt-3 mb-0">
 				
 				<div class="col">
 
-					<div class="card-deck">
+					<div class="card-columns">
 
-						<?php 
+						<?php
+
+							$cat = get_category( get_query_var( 'cat' ) );
+							$cat_id = $cat->cat_ID;
+							$child_categories=get_categories(
+							    array( 'parent' => $cat_id )
+							);
+
 						    $args = array(
 						        'post_type' => 'post',
+						        'category__in' => $cat_id,
 						        'post_status' => 'publish',
 						        'posts_per_page' => '9',
 						        'order' => 'DESC',
 						        'paged' => 1,
 						    );
 						    $my_post
+
+
 						?>
 
 						<?php
@@ -50,10 +63,11 @@
 						    while ( $my_posts->have_posts() ) : $my_posts->the_post()               
 						?>
 
+
 						<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-							<a href=<?php the_permalink(); ?>>
+							<a data-toggle="lightbox" data-gallery="example-gallery" data-type="image" href=<?php echo get_the_post_thumbnail_url(); ?>>
 						    	<div class="content-overlay"></div>
-					        	<img class="content-image card-img-top img-fluid" src=<?php the_post_thumbnail( array(360) ); ?>
+					        	<img class="content-image card-img-top img-fluid" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" src=<?php the_post_thumbnail( array(360) ); ?>
 					        	<div class="content-details fadeIn-top">
 						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
 					        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
@@ -75,7 +89,7 @@
 				<?php
 				// don't display the button if there are not enough posts
 				if (  $my_posts->max_num_pages > 1 )
-			    echo '<button type="button" class="btn btn-primary mx-auto my-5 d-flex load-more-home">+ novidades</button>'; // you can use <a> as well
+			    echo '<button type="button" class="btn btn-primary mx-auto my-5 d-flex load-more-home">ver mais</button>'; // you can use <a> as well
 				?>
 
 			</div><!-- obras_home -->
