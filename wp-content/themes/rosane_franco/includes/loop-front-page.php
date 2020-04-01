@@ -28,8 +28,9 @@
           <!-- criamos a variavel e referenciamos o valor the_post_thumbnail para usar mais abaixo -->
           <?php $imagempost = the_post_thumbnail('full', array('class' => 'd-block w-100 img-fluid')); ?>
 
-								<div class="carousel-caption d-none d-md-block">
-									<h1><?php the_title(); ?></h1>
+								<div class="carousel-caption mt-0 pt-0">
+									<h1 class="mt-0 pt-0 d-none d-sm-block d-md-block"><?php the_title(); ?></h1>
+									<h1 class="small mt-0 pt-0 d-block d-sm-none d-md-none d-lg-none d-xl-none"><?php the_title(); ?></h1>
 									<!-- <h5>Saiba mais</h5> -->
 									<div class="has-overlay"></div>								
 								</div>
@@ -64,7 +65,7 @@
 				<div class="col">
 
 					<section id="sobre_home" class="mt-5 text-center">
-						<h5 class="text-uppercase">sobre mim</h5>
+						<h5 class="text-uppercase">sobre</h5>
 						<h1 class="text-uppercase">rosane franco</h1>
 
 						<hr class="w-25">
@@ -84,10 +85,10 @@
 
 					<div class="card-columns">
 
-
 						<?php 
 						    $args = array(
 						        'post_type' => 'post',
+						        'cat' => -38,
 						        'post_status' => 'publish',
 						        'posts_per_page' => '9',
 						        'order' => 'DESC',
@@ -102,15 +103,32 @@
 						    while ( $my_posts->have_posts() ) : $my_posts->the_post()               
 						?>
 
+						<?php //$caption = get_the_content(); 
+						// $id = get_the_ID();
+						// $post = get_post($id);
+						// $content = $post->post_content;
+						// $content = get_the_content();
+							?>
+
 						<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-							<a data-toggle="lightbox" data-gallery="example-gallery" data-type="image" href=<?php echo get_the_post_thumbnail_url(); ?>>
+							<a 
+							href="<?php echo get_the_post_thumbnail_url(); ?>"
+							data-toggle="lightbox" 
+							data-gallery="example-gallery" 
+							data-type="image" 
+							data-title="<?php the_title(); ?>
+							<br><small><?php the_content(); ?></small>"
+							>
 						    	<div class="content-overlay"></div>
 					        	<img class="content-image card-img-top img-fluid" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" src=<?php the_post_thumbnail( array(360) ); ?>
 					        	<div class="content-details fadeIn-top">
 						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
-					        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
+					        		<h3 class="content-title text-uppercase text-white">
+					        			<?php the_title(); ?>
+					        			</h3>
 						    	</div>
 							</a>
+							<small><?php echo $caption; ?></small>
 					    </div>
 						 
 						<?php endwhile; ?>            

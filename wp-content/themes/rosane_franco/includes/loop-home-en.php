@@ -1,5 +1,5 @@
 <?php while ( have_posts() ) : the_post(); //Open the loop ?>
-
+	
 	<div class="container-fluid">
 
 			<div class="row">
@@ -15,13 +15,29 @@
 			
 						<div class="carousel-inner">
 					    
-							<div class="carousel-item active">
-							<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/first-slide.svg'); ?> alt="First slide">
-								<div class="carousel-caption d-none d-md-block">
-									<h1>Portfolio de Rosane Franco</h1>
-									<h5>Saiba mais</h5>
+						<?php
+
+						$args = array( 'post_type' => 'post', 'posts_per_page' => 3 );
+						$loop = new WP_Query( $args );
+						$post = $posts[0]; $c=0;
+						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+	<div id="post-<?php the_ID(); ?>" class="<?php $c++; if($c == 1) { echo 'active carousel-item'; } else { echo 'carousel-item'; } ?>">
+							
+
+          <!-- criamos a variavel e referenciamos o valor the_post_thumbnail para usar mais abaixo -->
+          <?php $imagempost = the_post_thumbnail('full', array('class' => 'd-block w-100 img-fluid')); ?>
+
+								<div class="carousel-caption mt-0 pt-0">
+									<h1 class="mt-0 pt-0 d-none d-sm-block d-md-block"><?php the_title(); ?></h1>
+									<h1 class="small mt-0 pt-0 d-block d-sm-none d-md-none d-lg-none d-xl-none"><?php the_title(); ?></h1>
+									<!-- <h5>Saiba mais</h5> -->
+									<div class="has-overlay"></div>								
 								</div>
 							</div>
+
+						<?php endwhile; ?>
+			            <?php wp_reset_query(); ?>
 
 						</div>
 
@@ -49,14 +65,15 @@
 				<div class="col">
 
 					<section id="sobre_home" class="mt-5 text-center">
-						<h5 class="text-uppercase">sobre mim</h5>
+						<h5 class="text-uppercase">about</h5>
 						<h1 class="text-uppercase">rosane franco</h1>
 
 						<hr class="w-25">
 
 						<?php the_content(); ?>
 
-						<a class="btn btn-primary" href=<?php echo get_site_url() . '/sobre-mim'; ?>>saiba mais</a>
+
+						<a class="btn btn-primary" href=<?php echo get_site_url() . '/sobre-mim'; ?>>more</a>
 					</section>
 
 				</div>
@@ -68,10 +85,10 @@
 
 					<div class="card-columns">
 
-
 						<?php 
 						    $args = array(
 						        'post_type' => 'post',
+						        'cat' => -38,
 						        'post_status' => 'publish',
 						        'posts_per_page' => '9',
 						        'order' => 'DESC',
@@ -87,9 +104,15 @@
 						?>
 
 						<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-							<a href=<?php the_permalink(); ?>>
+							<a 
+							href="<?php echo get_the_post_thumbnail_url(); ?>"
+							data-toggle="lightbox" 
+							data-gallery="example-gallery" 
+							data-type="image" 
+							data-title="<?php the_title(); ?>" 
+							>
 						    	<div class="content-overlay"></div>
-					        	<img class="content-image card-img-top img-fluid" src=<?php the_post_thumbnail( array(360) ); ?>
+					        	<img class="content-image card-img-top img-fluid" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" src=<?php the_post_thumbnail( array(360) ); ?>
 					        	<div class="content-details fadeIn-top">
 						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
 					        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
@@ -111,7 +134,7 @@
 				<?php
 				// don't display the button if there are not enough posts
 				if (  $my_posts->max_num_pages > 1 )
-				  echo '<button type="button" class="btn btn-primary mx-auto my-5 d-flex load-more-home">ver mais</button>'; // you can use <a> as well
+				  echo '<button type="button" class="btn btn-primary mx-auto my-5 d-flex load-more-home">load more</button>'; // you can use <a> as well
 				?>
 
 			</div><!-- obras_home -->

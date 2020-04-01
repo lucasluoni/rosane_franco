@@ -290,30 +290,43 @@ add_action('wp_ajax_load_posts_home_by_ajax', 'load_posts_home_by_ajax_callback'
 add_action('wp_ajax_nopriv_load_posts_home_by_ajax', 'load_posts_home_by_ajax_callback');
 
 function load_posts_home_by_ajax_callback() {
+
     check_ajax_referer('load_more_posts', 'security');
     $paged = $_POST['page'];
     $args = array(
-        'post_type' => 'post', 
+        'post_type' => 'post',
+        'cat' => -38,
         'post_status' => 'publish',
-        'posts_per_page' => '3',
+        'posts_per_page' => '6',
         'order' => 'DESC',
         'paged' => $paged,
     );
-    $my_posts = new WP_Query( $args );
-    if ( $my_posts->have_posts() ) :
-        ?>
-        <?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>
+    $my_post
+	?>
 
-		<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-			<a href=<?php the_permalink(); ?>>
-		    	<div class="content-overlay"></div>
-	        	<img class="content-image card-img-top img-fluid" src=<?php the_post_thumbnail( array(360) ); ?>
-	        	<div class="content-details fadeIn-top">
-		        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
-	        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
-		    	</div>
-			</a>
-	    </div>            
+	<?php
+	    $my_posts = new WP_Query( $args );
+	    if ( $my_posts->have_posts() ) : 
+	    while ( $my_posts->have_posts() ) : $my_posts->the_post()               
+	?>
+
+	<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
+		<a 
+		href="<?php echo get_the_post_thumbnail_url(); ?>"
+		data-toggle="lightbox" 
+		data-gallery="example-gallery" 
+		data-type="image" 
+		data-title="<?php the_title(); ?>" 
+		>
+	    	<div class="content-overlay"></div>
+	    	<img class="content-image card-img-top img-fluid" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" src=<?php the_post_thumbnail( array(360) ); ?>
+	    	<div class="content-details fadeIn-top">
+	        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
+	    		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
+	    	</div>
+		</a>
+	</div>
+
                            
         <?php endwhile; 
         wp_reset_postdata(); 
@@ -322,61 +335,6 @@ function load_posts_home_by_ajax_callback() {
     wp_die(); 
 
 }
-
-/****************************************************************************
-6.Botão Load More Obras na tela da categoria (loop-archive.php)
-****************************************************************************/
-//USe wp_ajax & wp_ajax_nopriv to enable ajax action "load_posts_by_ajax"
-//With this defined, we can request on the javascript side the action "load_posts_by_ajax"
-
-add_action('wp_ajax_load_obras_by_ajax', 'load_obras_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_obras_by_ajax', 'load_obras_by_ajax_callback');
-
-function load_obras_by_ajax_callback() {
-    check_ajax_referer('load_more_posts', 'security');
-    $paged = $_POST['page'];
-							$cat = get_category( get_query_var( 'cat' ) );
-							$cat_id = $cat->cat_ID;
-							$child_categories=get_categories(
-							    array( 'parent' => $cat_id )
-							);
-
-						    $args = array(
-						        'post_type' => 'post',
-						        'category__in' => $cat_id,
-						        'post_status' => 'publish',
-						        'posts_per_page' => '9',
-						        'order' => 'DESC',
-						        'paged' => 1,
-						    );
-						    $my_post
-						?>
-
-						<?php
-						    $my_posts = new WP_Query( $args );
-						    if ( $my_posts->have_posts() ) : 
-						    while ( $my_posts->have_posts() ) : $my_posts->the_post()               
-						?>
-
-						<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-							<a href=<?php the_permalink(); ?>>
-						    	<div class="content-overlay"></div>
-					        	<img class="content-image card-img-top img-fluid" src=<?php the_post_thumbnail( array(360) ); ?>
-					        	<div class="content-details fadeIn-top">
-						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
-					        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
-						    	</div>
-							</a>
-					    </div>
-                           
-        <?php endwhile; 
-        wp_reset_postdata(); 
-
-    endif; 
-    wp_die(); 
-
-}
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1043,3 +1001,14 @@ function tutsplus_add_attachments_to_categories() {
 }
  
 add_action( 'init' , 'tutsplus_add_attachments_to_categories' );
+
+
+// Prevent WP from adding <p> tags on pages
+// function disable_wp_auto_p( $content ) {
+//   if ( is_singular( 'page' ) ) {
+//     remove_filter( 'the_content', 'wpautop' );
+//     remove_filter( 'the_excerpt', 'wpautop' );
+//   }
+//   return $content;
+// }
+// add_filter( 'the_content', 'disable_wp_auto_p', 0 );

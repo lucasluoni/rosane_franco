@@ -1,4 +1,5 @@
 <?php //while ( have_posts() ) : the_post(); //Open the loop ?>
+
 	<div class="container-fluid">
 
 			<div class="row">
@@ -37,11 +38,14 @@
 					<div class="card-columns">
 
 					<?php
+
+					global $post;
+
 					$cat = get_category( get_query_var( 'cat' ) );
 					$cat_id = $cat->cat_ID;
-					$child_categories = get_categories(
-					    array( 'parent' => $cat_id )
-					);
+					// $child_categories = get_categories(
+					//     array( 'parent' => $cat_id )
+					// );
 
 				    $args = array(
 				        'post_type' => 'post',
@@ -60,26 +64,23 @@
 					    while ( $my_posts->have_posts() ) : $my_posts->the_post()               
 					?>
 
+					<?php
+					// $categories = get_the_category();
+					// 	if ( ! empty( $categories ) ) {
+    	// 				echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+    	// 			}
+					?>
+
 
 					<div id=post-<?php the_ID(); ?> <?php post_class('content card'); ?>>
-						<a 
-						href="<?php echo get_the_post_thumbnail_url(); ?>"
-						data-toggle="lightbox" 
-						data-gallery="example-gallery" 
-						data-type="image" 
-						data-title="<?php the_title(); ?>
-						<br><small><?php the_content(); ?></small>"
-						>
+						<a data-toggle="lightbox" data-gallery="example-gallery" data-type="image" href=<?php echo get_the_post_thumbnail_url(); ?>>
 					    	<div class="content-overlay"></div>
 				        	<img class="content-image card-img-top img-fluid" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" src=<?php the_post_thumbnail( array(360) ); ?>
 				        	<div class="content-details fadeIn-top">
 					        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
-				        		<h3 class="content-title text-uppercase text-white">
-				        			<?php the_title(); ?>
-				        			</h3>
+				        		<h3 class="content-title text-uppercase text-white"><?php the_title(); ?></h3>
 					    	</div>
 						</a>
-						<small><?php echo $caption; ?></small>
 				    </div>
 					 
 					<?php endwhile; ?>            

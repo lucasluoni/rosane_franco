@@ -24,6 +24,13 @@ h1 a {
 	color: #fff;
 }
 
+h4.modal-title {
+	text-transform: uppercase !important;
+	line-height: 1 !important;
+    font-size: 19px !important;
+    margin-bottom: -20px !important;
+}
+
 .navbar-brand img {
 	width: 160px;
 }
@@ -362,4 +369,55 @@ ul.lista_anos li {
 
 ul.lista_anos li a {
 	color: #ccc;
+}
+
+.linkAnos:hover {
+	color: #343a40 !important;
+}
+
+
+/* MEDIA QUERIES */
+
+
+/* Extra small devices (portrait phones, less than 576px)
+ No media query since this is the default in Bootstrap */
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+	
+	.carousel-caption.bannerMenor {
+		top: -10%;
+	}
+
+	.carousel-caption.bannerMenor.titleMaior {
+		top: -30%;
+	}
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	
+	.carousel-caption.bannerMenor {
+		top: 10%;
+	}
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	
+	.carousel-caption.bannerMenor {
+		top: 25%;
+	}
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	
+	.carousel-caption.bannerMenor {
+		top: 30%;
+	}
+
 }

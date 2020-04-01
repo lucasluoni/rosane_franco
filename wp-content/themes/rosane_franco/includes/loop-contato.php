@@ -13,8 +13,7 @@
 					    
 					    <div class="carousel-item active">
 					    	<img class="d-block w-100" src="<?php bloginfo('template_directory'); ?>/images/banner-contato-rosane-franco.jpg" alt="First slide">
-					    	<div class="carousel-caption d-none d-md-block">
-								<h1 class="text-capitalize"><?php the_title(); ?></h1>
+							<div class="carousel-caption bannerMenor titleMaior">
 								<div class="has-overlay"></div>
 					  		</div>
 					  	</div>

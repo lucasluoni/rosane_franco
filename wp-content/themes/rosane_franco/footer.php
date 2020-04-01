@@ -191,7 +191,7 @@
       });
     });
 
-    // Load More Eventos na tela das Obras (ano/tipo-de-obra) (loop-archive.php) ////////////////////////////////////////////////////   
+    // Load More Posts na tela das Obras (ano/tipo-de-obra) (loop-archive.php) ////////////////////////////////////////////////////   
     var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
     var page = 2;
     jQuery(function($) {
@@ -201,7 +201,7 @@
       //$('.loadmore').hide().fadeOut('fast');
       $('#loading').html('<img src="<?php echo get_template_directory_uri(); ?>/images/loading.gif" />');
         var data = {
-          'action': 'load_obras_by_ajax',
+          'action': 'load_posts_by_ajax',
           'page': page,
           'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
         };
@@ -227,6 +227,7 @@
     <script>// <![CDATA[
       function goBack() { window.history.back() }
     // ]]></script>
+
 
   </body>
 </html>

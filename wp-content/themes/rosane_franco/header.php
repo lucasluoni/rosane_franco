@@ -21,6 +21,12 @@
 	    ?>"/>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php wp_head(); ?>
+
+    <script>
+      pathArray = window.location.pathname.split('/');
+      categoria = console.log(pathArray[3]);
+    </script>
+
 </head>
 
   <body <?php body_class( ''. "" ); ?> >
