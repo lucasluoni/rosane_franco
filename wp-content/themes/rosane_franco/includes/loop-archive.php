@@ -1,5 +1,5 @@
 <?php //while ( have_posts() ) : the_post(); //Open the loop ?>
-	<div class="container-fluid">
+	<div class="container-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block">
 
 			<div class="row">
 				<div class="col px-0">
@@ -10,7 +10,7 @@
 					    
 							<div class="carousel-item active">
 							<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/banner-obras-rosane-franco.jpg'); ?> alt="First slide">
-								<div class="carousel-caption bannerMenor titleMaior">
+								<div class="carousel-caption bannerMenor">
 									<h1><?php echo get_category_parents( $cat, false, ' &raquo; ' ); ?></h1>
 									<div class="has-overlay"></div>
 								</div>

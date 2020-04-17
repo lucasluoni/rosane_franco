@@ -1,6 +1,6 @@
 <?php //while ( have_posts() ) : the_post(); //Open the loop ?>
 
-	<div class="container-fluid">
+	<div class="container-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block">
 
 			<div class="row">
 				<div class="col px-0">
@@ -10,7 +10,7 @@
 						<div class="carousel-inner">
 					    
 							<div class="carousel-item active">
-							<img class="d-block w-100" src=<?php echo( get_template_directory_uri() . '/images/banner-obras-rosane-franco.jpg'); ?> alt="First slide">
+							<img class="d-block w-100" src="<?php echo( get_template_directory_uri() . '/images/banner-obras-rosane-franco.jpg'); ?>" alt="First slide">
 								<div class="carousel-caption bannerMenor">
 									<h1><?php echo get_category_parents( $cat, false, ' &raquo; ' ); ?></h1>								
 									<div class="has-overlay"></div>
@@ -31,9 +31,9 @@
 
 			<h1 class="mt-5">Lista de Obras por ano:</h1>
 
-				<div id="" class="row mt-5 mb-0 d-flex mx-auto">
-						<div class="col-lg-6 mx-auto text-center">
+				<div class="col">
 
+					<div class="card-deck">
 
 						    <div class="row">
 
@@ -49,12 +49,17 @@
 
 						    ?>
 
+						    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-2 mx-0 px-1">
 
-							<div <?php post_class('col-4 col-sm-4 col-md-2 col-lg-2 col-xl-3 d-flex mx-auto'); ?>>
+
+							<div id="ano_categoria" <?php post_class('card border-0 m-0 rounded-0 p-3'); ?>>
 								<a class="linkAnos" href="<?php echo get_site_url() . '/category/' . $child ->cat_name . '-' . $cat->slug;  ?>">
-					        		<h3 class="content-title text-uppercase text-dark"><?php echo $child ->cat_name; ?></h3>
+						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
+					        		<h3 class="content-title text-uppercase text-white"><?php echo $child ->cat_name; ?></h3>
 								</a>
 						    </div>
+
+							</div>
 
 						    <?php
 

@@ -56,14 +56,17 @@ function script_repete_portfolio() {
 ?>
 
 <script type="text/javascript">
-    /* jquery para repeatable fields (textarea) de áreas expertise na tela de autor */
+    /* jquery para repeatable fields (textarea) para infos de currículo na tela sobre mim */
     jQuery('.repeatable-add').click(function() {
         // The first function looks for the add button and adds a new blank field row to the end of the list of fields. 
         // This is set up generically so that you can have as many of these repeatable fields as you need.
+        
         // "field" is a cloned version of the last field row
         field = jQuery(this).closest('td').find('#custom_repeatabel-repeatable li:last').clone(true);
+        
         //"fieldLocation" reminds the script where the end of the list is
         fieldLocation = jQuery(this).closest('td').find('#custom_repeatabel-repeatable li:last');
+        
         // Find the input within "field" and rest it's value to empty and add 1 to the numerical integer we'll use to save the data as an array
         jQuery('input', field).val('').attr('name', function(index, name) { 
         //alert("The malucas button was clicked.");

@@ -35,13 +35,13 @@
 
               <ul id="nav-social" class="nav justify-content-end">
                 <li class="nav-item">
-                    <a href="https://twitter.com/" target="_blank" class="nav-link px-2">
+                    <!-- <a href="https://twitter.com/" target="_blank" class="nav-link px-2">
                 <ion-icon name="logo-twitter" class=""></ion-icon>                  
-                    </a>
-                    <a href="https://www.facebook.com/" target="_blank" class="nav-link px-2">
+                    </a> -->
+                    <a href="https://www.facebook.com/rosane.franco.167" target="_blank" class="nav-link px-2">
                 <ion-icon name="logo-facebook" class=""></ion-icon>
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank" class="nav-link px-2">
+                    <a href="https://www.instagram.com/franco_rosane_/" target="_blank" class="nav-link px-2">
                 <ion-icon name="logo-instagram" class=""></ion-icon>
                     </a>
                 </li>
@@ -227,6 +227,48 @@
     <script>// <![CDATA[
       function goBack() { window.history.back() }
     // ]]></script>
+
+    <script>
+      // if ($.trim($(".periodo").attr('h4')) == '') { 
+      //     $(".w-25").hide();
+      // };
+        $(".periodo:empty").next().hide();
+        $(".periodo:not(:empty)").next().show();            
+        // $(".periodo:empty").next().css();
+        $(".periodo:not(:empty)").addClass('mt-4');            
+    </script>
+
+    <script>
+      
+      $(function() {
+
+         var sliderHeight = $('.carousel-inner').height();
+
+         $(".jose").append("<div id='overlay'></div>");
+
+         $("#overlay")
+            .height(sliderHeight)
+            .css({
+               'opacity' : 0.1,
+               'position': 'absolute',
+               'top': 0,
+               'left': 0,
+               // 'background-color': 'black',
+               'background-color' : 'rgba(234,50,70,0.8)',
+               'width': '100%',
+               'z-index': 1
+            });
+
+         $(".carousel-caption h1")
+         .css({
+            'bottom': sliderHeight / 3,
+            'z-index': 2000
+         });
+
+
+      });
+    
+    </script>
 
 
   </body>

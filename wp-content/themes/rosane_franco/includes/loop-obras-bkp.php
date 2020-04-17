@@ -50,7 +50,7 @@
 						    ?>
 
 
-							<div <?php post_class('col-4 col-sm-4 col-md-2 col-lg-2 col-xl-3 d-flex mx-auto'); ?>>
+							<div <?php post_class('col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex mx-auto'); ?>>
 								<a class="linkAnos" href="<?php echo get_site_url() . '/category/' . $child ->cat_name . '-' . $cat->slug;  ?>">
 					        		<h3 class="content-title text-uppercase text-dark"><?php echo $child ->cat_name; ?></h3>
 								</a>

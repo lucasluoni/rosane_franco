@@ -1,6 +1,6 @@
 <?php //while ( have_posts() ) : the_post(); //Open the loop ?>
 
-	<div class="container-fluid">
+	<div class="container-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block">
 
 		<div class="row">
 			<div class="col px-0">
@@ -11,7 +11,7 @@
 				    
 				    <div class="carousel-item active">
 				    	<img class="d-block w-100" src="<?php bloginfo('template_directory'); ?>/images/banner-sobre-rosane-franco.jpg" alt="First slide">
-						<div class="carousel-caption bannerMenor titleMaior">
+						<div class="carousel-caption bannerMenor">
 							<h1 class="text-capitalize"><?php the_title(); ?></h1>
 							<div class="has-overlay"></div>
 				  		</div>
@@ -85,7 +85,7 @@
 
 				<div class="row">
 					
-					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-left">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-left" style="white-space: pre-line;">
 
 						<?php echo $post_meta_data['custom_texto'][0]; ?>
 
@@ -101,7 +101,7 @@
 				<div class="row text-center mb-5">
 					<div class="col">
 
-							<h1 class="text-capitalize">exposições</h1>
+							<h1 class="text-capitalize">CV Rosane Franco</h1>
 							<hr class="w-25">
 
 					</div>
@@ -113,11 +113,11 @@
 	                    <?php $tracks = get_post_meta($post->ID, 'expo_repeatable', true);
                     	foreach($tracks as $track) { ?>
 
-							<div class="timeline mb-4">
+							<div class="timeline my-0">
 
-								<h4 class="periodo"><?php echo $track['nome']; ?></h4>
+								<h4 class="periodo my-0"><?php echo $track['nome']; ?></h4>
 								<hr class="w-25">
-								<?php echo $track['link']; ?>
+								<span><?php echo $track['link']; ?></span>
 
 							</div>
 

@@ -2,7 +2,7 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         
-		<div class="container-fluid">
+		<div class="container-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block">
 
 			<div class="row">
 				<div class="col px-0">
@@ -13,7 +13,8 @@
 					    
 					    <div class="carousel-item active">
 					    	<img class="d-block w-100" src="<?php bloginfo('template_directory'); ?>/images/banner-contato-rosane-franco.jpg" alt="First slide">
-							<div class="carousel-caption bannerMenor titleMaior">
+							<div class="carousel-caption bannerMenor">
+								<h1 class="text-capitalize">Arte ao seu alcance</h1>
 								<div class="has-overlay"></div>
 					  		</div>
 					  	</div>
@@ -35,7 +36,7 @@
 
 						<section id="contato" class="mt-5 text-center">
 							
-							<h5>Gostou do meu trabalho?</h5>
+							<h5>Você gostou do meu trabalho?</h5>
 							<h1 class="text-capitalize">fale comigo</h1>
 
 							<hr class="w-25">

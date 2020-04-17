@@ -390,8 +390,14 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
         break;
         // textarea
         case 'textarea':
-            echo '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" cols="60" rows="4">' . esc_textarea( $meta ) . '</textarea>
+            echo '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" cols="60" rows="8">' . esc_textarea( $meta ) . '</textarea>
                     <br />' . $desc;
+
+        // textarea novo
+        // case 'textarea':
+        //     echo '<textarea name="'.$name.'" id="'.$id.'" cols="60" rows="12">'.$meta.'</textarea>
+        //             <br />' . $desc;
+
         break;
         // editor
         case 'editor':
@@ -938,11 +944,11 @@ class Custom_Add_Meta_Box {
                 if ( isset( $new ) && '' == $new && $old ) {
                     delete_post_meta( $post_id, $field['id'], $old );
                 } elseif ( isset( $new ) && $new != $old ) {
-                    $sanitizer = isset( $field['sanitizer'] ) ? $field['sanitizer'] : 'sanitize_text_field';
-                    if ( is_array( $new ) )
-                        $new = meta_box_array_map_r( 'meta_box_sanitize', $new, $sanitizer );
-                    else
-                        $new = meta_box_sanitize( $new, $sanitizer );
+                    // $sanitizer = isset( $field['sanitizer'] ) ? $field['sanitizer'] : 'sanitize_text_field';
+                    // if ( is_array( $new ) )
+                    //     $new = meta_box_array_map_r( 'meta_box_sanitize', $new, $sanitizer );
+                    // else
+                    //     $new = meta_box_sanitize( $new, $sanitizer );
                     update_post_meta( $post_id, $field['id'], $new );
                 }
             }

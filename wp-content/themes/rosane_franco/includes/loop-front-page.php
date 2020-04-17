@@ -1,9 +1,9 @@
 <?php while ( have_posts() ) : the_post(); //Open the loop ?>
 	
-	<div class="container-fluid">
+	<div class="container-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block">
 
 			<div class="row">
-				<div class="col px-0">
+				<div class="col px-0 texte">
 
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 						
@@ -22,26 +22,27 @@
 						$post = $posts[0]; $c=0;
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-	<div id="post-<?php the_ID(); ?>" class="<?php $c++; if($c == 1) { echo 'active carousel-item'; } else { echo 'carousel-item'; } ?>">
+						<div id="post-<?php the_ID(); ?>" 
+						class="<?php $c++; if($c == 1) { echo 'active carousel-item'; } else { echo 'carousel-item'; } ?>"
+						>
 							
-
-          <!-- criamos a variavel e referenciamos o valor the_post_thumbnail para usar mais abaixo -->
-          <?php $imagempost = the_post_thumbnail('full', array('class' => 'd-block w-100 img-fluid')); ?>
-
-								<div class="carousel-caption mt-0 pt-0">
-									<h1 class="mt-0 pt-0 d-none d-sm-block d-md-block"><?php the_title(); ?></h1>
-									<h1 class="small mt-0 pt-0 d-block d-sm-none d-md-none d-lg-none d-xl-none"><?php the_title(); ?></h1>
-									<!-- <h5>Saiba mais</h5> -->
-									<div class="has-overlay"></div>								
-								</div>
+							<div class="carousel-caption" style="z-index: 5000;">
+								<h1 class="text-white">
+									<?php the_title(); ?>
+								</h1>
 							</div>
+
+							<!-- criamos a variavel e referenciamos o valor the_post_thumbnail para usar mais abaixo -->
+							<?php $imagempost = the_post_thumbnail('full', array('class' => 'd-block w-100 img-fluid')); ?>
+						
+						</div>
 
 						<?php endwhile; ?>
 			            <?php wp_reset_query(); ?>
 
 						</div>
 
-					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<!-- 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
 					  </a>
@@ -50,6 +51,9 @@
 					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Next</span>
 					  </a>
+
+ -->
+					<div class="jose"></div>
 
 				</div>
 
