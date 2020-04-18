@@ -239,34 +239,62 @@
     </script>
 
     <script>
+
+      (function (win,doc){
+
+        var sliderHeight = document.getElementById("carousel_inner").offsetHeight;
+        var alturaHeading = sliderHeight / 3;
+        // console.log(alturaHeading)
+        var Heading = document.querySelector(".carousel-caption h1");
+        // console.log(Heading);
+        // Heading.style.bottom = alturaHeading + 'px';
+
+        var myNodelist = document.querySelectorAll(".carousel-caption");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+          // myNodelist[i].style.backgroundColor = "red";
+          // myNodelist[i].innerHTML += "<div id='overlay'></div>";
+          myNodelist[i].insertAdjacentHTML("afterend", 
+                "<div id='overlay'></div>");
+          
+
+        }
+
+        var ListaHeadings = document.querySelectorAll(".carousel-caption h1");
+        var i;
+        for (i=0; i < ListaHeadings.length; i++){
+          ListaHeadings[i].style.bottom = alturaHeading + 'px';
+        }
+
+      }(window,document));
       
-      $(function() {
-
-         var sliderHeight = $('.carousel-inner').height();
-
-         $(".jose").append("<div id='overlay'></div>");
-
-         $("#overlay")
-            .height(sliderHeight)
-            .css({
-               'opacity' : 0.1,
-               'position': 'absolute',
-               'top': 0,
-               'left': 0,
-               // 'background-color': 'black',
-               'background-color' : 'rgba(234,50,70,0.8)',
-               'width': '100%',
-               'z-index': 1
-            });
-
-         $(".carousel-caption h1")
-         .css({
-            'bottom': sliderHeight / 3,
-            'z-index': 2000
-         });
 
 
-      });
+      // $(function() {
+      
+      // var sliderHeight = $('.carousel-inner').height();
+
+      //  $(".carousel-caption h1")
+      //  .css({
+      //     'bottom': sliderHeight / 3,
+      //     'z-index': 2000
+      //  });
+
+      // $(".carousel-caption").after("<div id='overlay'></div>");
+
+      //  $("#overlay")
+      //     .height(sliderHeight)
+      //     .css({
+      //        'opacity' : 0.4,
+      //        'position': 'absolute',
+      //        'top': 0,
+      //        'left': 0,
+      //        'background-color': 'black',
+      //        'width': '100%',
+      //        'z-index': 1
+      //     });
+
+      // });
     
     </script>
 

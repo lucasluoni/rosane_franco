@@ -13,7 +13,7 @@
 							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 						</ol>
 			
-						<div class="carousel-inner">
+						<div id="carousel_inner" class="carousel-inner">
 					    
 						<?php
 
@@ -27,7 +27,7 @@
 						>
 							
 							<div class="carousel-caption" style="z-index: 5000;">
-								<h1 class="text-white">
+								<h1 class="text-white heading_post">
 									<?php the_title(); ?>
 								</h1>
 							</div>
@@ -42,7 +42,7 @@
 
 						</div>
 
-<!-- 					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
 					  </a>
@@ -52,8 +52,8 @@
 					    <span class="sr-only">Next</span>
 					  </a>
 
- -->
-					<div class="jose"></div>
+
+					<!-- <div class="jose"></div> -->
 
 				</div>
 
