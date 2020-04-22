@@ -7,7 +7,7 @@
 
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		
-					<div class="carousel-inner">
+					<div id="banner_menor" class="carousel-inner">
 				    
 				    <div class="carousel-item active">
 				    	<img class="d-block w-100" src="<?php bloginfo('template_directory'); ?>/images/banner-sobre-rosane-franco.jpg" alt="First slide">

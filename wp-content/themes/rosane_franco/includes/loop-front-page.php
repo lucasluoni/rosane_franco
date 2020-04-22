@@ -26,7 +26,7 @@
 						class="<?php $c++; if($c == 1) { echo 'active carousel-item'; } else { echo 'carousel-item'; } ?>"
 						>
 							
-							<div class="carousel-caption" style="z-index: 5000;">
+							<div class="carousel-caption banner-home-caption" style="z-index: 5000;">
 								<h1 class="text-white heading_post">
 									<?php the_title(); ?>
 								</h1>

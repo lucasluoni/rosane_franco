@@ -7,7 +7,7 @@
 
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 									
-						<div class="carousel-inner">
+						<div id="banner_menor" class="carousel-inner">
 					    
 							<div class="carousel-item active">
 							<img class="d-block w-100" src="<?php echo( get_template_directory_uri() . '/images/banner-obras-rosane-franco.jpg'); ?>" alt="First slide">
@@ -26,10 +26,10 @@
 
 	</div>
 
-	<div class="container-fluid pb-5">
+	<div class="container-fluid py-5">
 		<div class="container">
 
-			<h1 class="mt-5">Lista de Obras por ano:</h1>
+			<!-- <h1 class="mt-5">Lista de Obras por ano:</h1> -->
 
 				<div class="col">
 
@@ -49,14 +49,11 @@
 
 						    ?>
 
-						    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-2 mx-0 px-1">
+						    <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
 
-							<div id="ano_categoria" <?php post_class('card border-0 m-0 rounded-0 p-3'); ?>>
-								<a class="linkAnos" href="<?php echo get_site_url() . '/category/' . $child ->cat_name . '-' . $cat->slug;  ?>">
-						        	<ion-icon name="camera" class="text-white ionicons"></ion-icon>
-					        		<h3 class="content-title text-uppercase text-white"><?php echo $child ->cat_name; ?></h3>
-								</a>
+							<div <?php post_class('m-0 p-3'); ?>>
+								<a class="btn btn-primary rounded-0" href="<?php echo get_site_url() . '/category/' . $child ->cat_name . '-' . $cat->slug;  ?>"><?php echo $child ->cat_name; ?></a>
 						    </div>
 
 							</div>

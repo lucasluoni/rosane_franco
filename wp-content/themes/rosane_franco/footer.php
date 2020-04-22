@@ -229,35 +229,38 @@
     // ]]></script>
 
     <script>
-      // if ($.trim($(".periodo").attr('h4')) == '') { 
-      //     $(".w-25").hide();
-      // };
         $(".periodo:empty").next().hide();
         $(".periodo:not(:empty)").next().show();            
-        // $(".periodo:empty").next().css();
         $(".periodo:not(:empty)").addClass('mt-4');            
     </script>
 
     <script>
 
+
       (function (win,doc){
 
-        var sliderHeight = document.getElementById("carousel_inner").offsetHeight;
+        'use strict';
+
+        // alert("Page location is " + window.location.href);
+
+        if ($('body').is('.home')){
+          // alert('Homepage!');
+
+        var x = document.readyState;
+        console.log(x);
+
+        if (document.readyState === 'loading') {
+          var sliderHeight = document.getElementById("carousel_inner").offsetHeight;
+        }
+
         var alturaHeading = sliderHeight / 3;
-        // console.log(alturaHeading)
         var Heading = document.querySelector(".carousel-caption h1");
-        // console.log(Heading);
-        // Heading.style.bottom = alturaHeading + 'px';
 
         var myNodelist = document.querySelectorAll(".carousel-caption");
         var i;
         for (i = 0; i < myNodelist.length; i++) {
-          // myNodelist[i].style.backgroundColor = "red";
-          // myNodelist[i].innerHTML += "<div id='overlay'></div>";
           myNodelist[i].insertAdjacentHTML("afterend", 
                 "<div id='overlay'></div>");
-          
-
         }
 
         var ListaHeadings = document.querySelectorAll(".carousel-caption h1");
@@ -266,8 +269,36 @@
           ListaHeadings[i].style.bottom = alturaHeading + 'px';
         }
 
-      }(window,document));
-      
+      } else {
+
+      // }(window,document));
+
+
+      // (function (win,doc){
+
+        // 'use strict';
+
+        if (document.readyState === 'loading') {
+          var carouselHeightMenor = document.getElementById("banner_menor").offsetHeight;
+          console.log(carouselHeightMenor);        
+        }
+
+
+        var alturaHeadingMenor = carouselHeightMenor / 4.5;
+        console.log(alturaHeadingMenor);
+        var HeadingMenor = document.querySelector("#banner_menor h1");
+        console.log(HeadingMenor.innerHTML);
+
+        var captionMenor = document.querySelector(".bannerMenor");
+        captionMenor.insertAdjacentHTML("afterend", "<div id='overlay'></div>");
+
+        var banner = document.querySelector(".bannerMenor h1");
+        banner.style.bottom = alturaHeadingMenor + 'px';
+
+      }
+
+      }
+      (window,document));
 
 
       // $(function() {
@@ -276,7 +307,7 @@
 
       //  $(".carousel-caption h1")
       //  .css({
-      //     'bottom': sliderHeight / 3,
+      //     'bottom': sliderHeight / 4.5,
       //     'z-index': 2000
       //  });
 
