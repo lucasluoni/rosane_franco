@@ -42,7 +42,10 @@
 								$cat_id = $cat->cat_ID;
 							    // $cat_slug = $cat->slug;
 								$child_categories=get_categories(
-								    array( 'parent' => $cat_id )
+								    array( 
+								    	'parent' => $cat_id,
+								    	'order'	 => 'DESC' 
+								    )
 								);
 
 								foreach ( $child_categories as $child ) {

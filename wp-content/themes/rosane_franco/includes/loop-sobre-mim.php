@@ -51,8 +51,8 @@
 
 				<div class="row">
 					<div class="col">
-						<h1 class="text-capitalize"><?php the_title(); ?></h1>
-						<hr class="w-25 mb-5">
+						<h1 class="text-capitalize mb-5"><?php the_title(); ?></h1>
+						<!-- <hr class="w-25 mb-5"> -->
 					</div>
 				</div>
 
@@ -101,7 +101,7 @@
 				<div class="row text-center mb-5">
 					<div class="col">
 
-							<h1 class="text-capitalize">CV Rosane Franco</h1>
+							<h1 class="text-capitalize">CV</h1>
 							<hr class="w-25">
 
 					</div>

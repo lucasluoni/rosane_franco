@@ -69,8 +69,8 @@
 				<div class="col">
 
 					<section id="sobre_home" class="mt-5 text-center">
-						<h5 class="text-uppercase">sobre</h5>
-						<h1 class="text-uppercase">rosane franco</h1>
+						<!-- <h5 class="text-uppercase">sobre</h5> -->
+						<h1 class="text-uppercase">apresentação</h1>
 
 						<hr class="w-25">
 
